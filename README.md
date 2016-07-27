@@ -3,7 +3,7 @@ A simple React to-do-list project that lives entirely on the front end. For the 
 
 Remember, you can't spell 'front end' without 'frend' :)
 
-Based not a little on [this](http://codepen.io/pankajparashar/pen/MYzgyW?editors=1000#0).
+Based not a little upon [this](http://codepen.io/pankajparashar/pen/MYzgyW?editors=1000#0).
 
 To run:
 -----
