@@ -59,7 +59,7 @@ const ToDoListForm = React.createClass({
 // Stateless, functional component - it is passed props as its argument. Essentially one big render() function.
 const ToDoListItem = function(props) {
     return(
-        // the children property is always present in props. It contains anything put between the opening and closing tags when call the class is called.
+        // the children property is always present in props. It contains anything put between the opening and closing tags when the class is called.
         <li>{props.children}</li>
     );
 }
