@@ -41,8 +41,8 @@ const ToDoListForm = React.createClass({
         // Also note the setting of 'ref="textInput"' - this is used in handleSubmit above to refocus after form submission.
         return(
             <form onSubmit={this.handleSubmit}>
-                <input type="text" onChange={this.onChange} value={this.state.inputValue} ref="textInput" />
-                <input type="submit" placeholder="Enter your ToDo here" />
+                <input type="text" onChange={this.onChange} value={this.state.inputValue} ref="textInput" placeholder="Enter your to-do here"/>
+                <input type="submit" />
             </form>
         );
     }
@@ -57,10 +57,19 @@ const ToDoListItem = function(props) {
 
 // Stateless, functional component. Just an algorithm - data in, markup out. No 'brain' (it doesn't carry its own data).
 const ToDoList = function(props) {
+    /**
+     Below we map the array of to-dos (which comes from ToDoListApp's state - see that class's constructor() function)
+     into an array of <li> items instead!
+     For instance, we might turn
+        ['First to-do', 'Second to-do', 'Third to-do']
+     into
+        <li>First to-do</li>
+        <li>Second to-do</li>
+        <li>Third to-do</li>
+    */
     function createToDoListItem(text) {
         return <ToDoListItem>{text}</ToDoListItem>;
-    } 
-
+    }
     return (
         <ul>
             {props.toDos.map(createToDoListItem)}
@@ -68,7 +77,7 @@ const ToDoList = function(props) {
         );
 }
 
-// More complex ES6 class
+// More complex ES6 class, which utilises three of the other React classes, bringing the app together.
 class ToDoListApp extends React.Component {
     // constructor() is a bit like the initialize method in Ruby classes.
     constructor(props) {
@@ -80,8 +89,9 @@ class ToDoListApp extends React.Component {
     }
 
     updateItems(item) {
+        // setState gives the state a new value. In this case, we add a new to-do to the toDos array.
         this.setState({
-            toDos: this.state.toDos.concat([item])
+            toDos: this.state.toDos.concat([item]) // could also use write this instead, using ES6 Array spread operator: toDos: [...this.state.toDos, item]
         });
     }
 
@@ -91,7 +101,6 @@ class ToDoListApp extends React.Component {
                 <ToDoTitle name={this.props.friendName} />
                 <br />
                 <ToDoListForm onFormSubmit={this.updateItems} />
-                <br />
                 <ToDoList toDos={this.state.toDos} />
             </div>
         )
@@ -99,7 +108,7 @@ class ToDoListApp extends React.Component {
 }
 
 ReactDOM.render(
-    // Passing in the friendName prop, which is then passed down again into ToDoTitle via ToDoListApp's render method
-    <ToDoListApp friendName="Friend" />,
+    // Passing in the friendName prop, which is then passed down again into ToDoTitle via ToDoListApp's render method.
+    <ToDoListApp friendName="[friend name here]" />,
     document.getElementById('content')
 );
