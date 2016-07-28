@@ -89,7 +89,7 @@ class ToDoListApp extends React.Component {
     constructor(props) {
         // Always required. Calls the constructor of the parent class, React.Component.
         super(props);
-        // The line below is the ES6 class equivalent of getInitialState (seen in ToDoListForm).
+        // The line below is the ES6 class equivalent of getInitialState() (seen in ToDoListForm).
         this.state = { toDos: [] };
         // Don't ask. Explanation here: https://facebook.github.io/react/docs/reusable-components.html#no-autobinding
         this.updateItems = this.updateItems.bind(this);
