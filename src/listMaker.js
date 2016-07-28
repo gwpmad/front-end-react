@@ -14,7 +14,7 @@ class ToDoTitle extends React.Component {
 
 // React.createClass (probably the most common but ES6 classes are the future)
 const ToDoListForm = React.createClass({
-    // the component's state will be an object. This function tells React how the object will be start.
+    // the component's state will be an object literal. This function declares what it will start as (when the component is rendered).
     getInitialState: function() {
         return {
             inputValue: '',
@@ -27,6 +27,8 @@ const ToDoListForm = React.createClass({
         this.props.onFormSubmit(this.state.inputValue);
         // set inputValue on the state back to empty (this will empty the box too, see comment in the render function)
         this.setState({inputValue: ''});
+        // focus back upon the form input. This uses the handy refs object (accessed via 'ref=textInput' in the component's render function)
+        this.refs.textInput.focus();
     },
     onChange: function(e) {
         // set the component's state to the typed-in value
@@ -36,9 +38,10 @@ const ToDoListForm = React.createClass({
     },
     render: function() {
         // Note how the text input's value is tied to this.state.inputValue. This means the box will empty when inputValue does.
+        // Also note the setting of 'ref="textInput"' - this is used in handleSubmit above to refocus after form submission.
         return(
             <form onSubmit={this.handleSubmit}>
-                <input type="text" onChange={this.onChange} value={this.state.inputValue} />
+                <input type="text" onChange={this.onChange} value={this.state.inputValue} ref="textInput" />
                 <input type="submit" placeholder="Enter your ToDo here" />
             </form>
         );
