@@ -7,7 +7,7 @@ Based not a little upon [this](http://codepen.io/pankajparashar/pen/MYzgyW?edito
 
 Uses a mixture of the various syntaxes available (React.createClass, ES6 class, functional component) for demonstration purposes.
 
-This project uses [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html). This means it has to be transpiled into regular JavaScript that the browser can understand. The same goes for the ES6 syntax that is used (const, classes etc.). Babel is used for this transpilation.
+This project uses [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html). This means it has to be transpiled into regular JavaScript that the browser can understand. The same goes for the ES6 syntax that is used (const, classes etc.). [Babel](https://babeljs.io/docs/usage/cli/) is used for this transpilation.
 
 To run:
 -----
