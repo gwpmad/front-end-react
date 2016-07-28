@@ -13,6 +13,7 @@ e.g. <ToDoTitle name="George" />
 */
 // Simple ES6 class
 class ToDoTitle extends React.Component {
+    // The render() function defines the actual rendered output of the class.
     render() {
         return <h1>Hello {this.props.name}, this is a simple React app!</h1>;
     }
@@ -20,20 +21,20 @@ class ToDoTitle extends React.Component {
 
 // React.createClass() (probably the most common syntax but ES6 classes and functional components are the future)
 const ToDoListForm = React.createClass({
-    // the component's state will be an object literal. This function declares what it will start as (when the component is rendered).
+    // The component's state will be an object literal. This function declares what it will start as (when the component is rendered).
     getInitialState: function() {
         return {
             inputValue: '',
         };
     },
     handleSubmit: function(e) {
-        // stop the default submit form event happening
+        // Stop the default submit form event happening
         e.preventDefault();
-        // fire the callback that was passed in via props (see ToDoListApp below) with the value of the input field
+        // Fire the callback that was passed in via props (see ToDoListApp below) with the value of the input field
         this.props.onFormSubmit(this.state.inputValue);
-        // set inputValue on the state back to empty (this will empty the box too, see comment in the render function)
+        // Set inputValue on the state back to empty (this will empty the box too, see comment in the render function)
         this.setState({inputValue: ''});
-        // focus back upon the form input. This uses the handy refs object (accessed via 'ref=textInput' in the component's render function)
+        // Focus back upon the form input. This uses the handy refs object (accessed via 'ref=textInput' in the component's render function)
         this.refs.textInput.focus();
     },
     onChange: function(e) {
@@ -42,6 +43,7 @@ const ToDoListForm = React.createClass({
             inputValue: e.target.value
         });
     },
+    // Like in the ES6 class, a render() function is required. 
     render: function() {
         // Note how the text input's value is tied to this.state.inputValue. This means the box will empty when inputValue does.
         // Also note the setting of 'ref="textInput"' - this is used in handleSubmit above to refocus after form submission.
@@ -54,7 +56,7 @@ const ToDoListForm = React.createClass({
     }
 });
 
-// Stateless, functional component - it is passed props as its argument.
+// Stateless, functional component - it is passed props as its argument. Essentially one big render() function.
 const ToDoListItem = function(props) {
     return(
         // the children property is always present in props. It contains anything put between the opening and closing tags when call the class is called.
