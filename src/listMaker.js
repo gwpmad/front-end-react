@@ -9,7 +9,7 @@
 Here we are creating a new component that can be reused as many times as we want. Instead of (say) <div> or <h1>,
 when we want to use this component we will use <ToDoTitle>.
 The 'props' object (used in render()'s return statement) will be defined by the properties we drop in when we use the component,
-e.g. <ToDoTitle name="George"> 
+e.g. <ToDoTitle name="George" /> 
 */
 // Simple ES6 class
 class ToDoTitle extends React.Component {
