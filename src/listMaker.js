@@ -59,7 +59,7 @@ const ToDoListForm = React.createClass({
 // Stateless, functional component - it is passed props as its argument. Essentially one big render() function.
 const ToDoListItem = function(props) {
     return(
-        // the children property is always present in props. It contains anything put between the opening and closing tags when the class is called.
+        // The children property is always present in props. It contains anything put between the opening and closing tags when the class is called.
         <li>{props.children}</li>
     );
 }
@@ -99,7 +99,7 @@ class ToDoListApp extends React.Component {
     }
 
     updateItems(item) {
-        // setState gives the state a new value. In this case, we add a new to-do to the toDos array.
+        // setState() gives the state a new value. In this case, we add a new to-do to the toDos array.
         this.setState({
             toDos: this.state.toDos.concat([item]) // could also write the following instead, using ES6 Array spread operator: toDos: [...this.state.toDos, item]
         });
