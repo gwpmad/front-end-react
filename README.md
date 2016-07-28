@@ -19,7 +19,7 @@ npm run build
 open index.html
 ```
 
-To develop (with automatic transpilation when src/listMaker.js is saved)
+To develop (with automatic transpilation when src/listMaker.js is saved):
 -----
 ```
 node_modules/.bin/babel --watch src/listMaker.js --out-file dist/bundle.js
