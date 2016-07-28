@@ -1,23 +1,24 @@
 /** Intentionally showing different ways of creating React components.
  Features React components created with:
- * React.createClass
+ * React.createClass()
  * ES6 class syntax
  * Functional syntax (for components that don't require a state)
 */
 
 /**
-Simple ES6 class. We are creating a new component that can be reused as many times as we want. Instead of (say) <div> or <h1>,
+Here we are creating a new component that can be reused as many times as we want. Instead of (say) <div> or <h1>,
 when we want to use this component we will use <ToDoTitle>.
 The 'props' object (used in render()'s return statement) will be defined by the properties we drop in when we use the component,
 e.g. <ToDoTitle name="George"> 
 */
+// Simple ES6 class
 class ToDoTitle extends React.Component {
     render() {
         return <h1>Hello {this.props.name}, this is a simple React app!</h1>;
     }
 }
 
-// React.createClass (probably the most common syntax but ES6 classes are the future)
+// React.createClass() (probably the most common syntax but ES6 classes and functional components are the future)
 const ToDoListForm = React.createClass({
     // the component's state will be an object literal. This function declares what it will start as (when the component is rendered).
     getInitialState: function() {
