@@ -12,7 +12,7 @@ class ToDoTitle extends React.Component {
     }
 }
 
-// React.createClass (probably the most common but ES6 classes are the future)
+// React.createClass (probably the most common syntax but ES6 classes are the future)
 const ToDoListForm = React.createClass({
     // the component's state will be an object literal. This function declares what it will start as (when the component is rendered).
     getInitialState: function() {
