@@ -112,6 +112,7 @@ class ToDoListApp extends React.Component {
     }
 }
 
+// Finally we render the main component. The first argument is the class to render, and the second argument is the DOM target we wish to render it.
 ReactDOM.render(
     // Passing in the friendName prop, which is then passed down again into ToDoTitle via ToDoListApp's render method.
     <ToDoListApp friendName="[friend name here]" />,
