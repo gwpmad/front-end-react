@@ -1,5 +1,5 @@
 # front-end-react - a first introduction
-A simple React to-do-list project that lives entirely on the front end. Comments everywhere. For the purpose of tutoring a friend.
+A very simple React to-do-list project that lives entirely on the front end. Comments everywhere. For the purpose of tutoring a friend.
 
 Remember, you can't spell 'front-end' without 'frend' :)
 
