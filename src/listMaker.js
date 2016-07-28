@@ -98,7 +98,7 @@ class ToDoListApp extends React.Component {
     updateItems(item) {
         // setState gives the state a new value. In this case, we add a new to-do to the toDos array.
         this.setState({
-            toDos: this.state.toDos.concat([item]) // could also use write this instead, using ES6 Array spread operator: toDos: [...this.state.toDos, item]
+            toDos: this.state.toDos.concat([item]) // could also write the following instead, using ES6 Array spread operator: toDos: [...this.state.toDos, item]
         });
     }
 
