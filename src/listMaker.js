@@ -56,7 +56,7 @@ const ToDoListForm = React.createClass({
 // Stateless, functional component - it is passed props as its argument.
 const ToDoListItem = function(props) {
     return(
-        // the children property is always present in props. It contains anything put between the opening and closing tags when you call the class.
+        // the children property is always present in props. It contains anything put between the opening and closing tags when call the class is called.
         <li>{props.children}</li>
     );
 }
@@ -87,6 +87,7 @@ const ToDoList = function(props) {
 class ToDoListApp extends React.Component {
     // constructor() is a bit like the initialize method in Ruby classes.
     constructor(props) {
+        // Always required. Calls the constructor of the parent class, React.Component.
         super(props);
         // The line below is the equivalent of getInitialState (seen in ToDoListForm).
         this.state = { toDos: [] };
