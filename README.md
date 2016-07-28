@@ -12,6 +12,8 @@ This project uses [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html)
 To run:
 -----
 ```
+git clone https://github.com/gwpmad/front-end-react.git
+cd front-end-react
 npm install
 npm run build
 open index.html
